@@ -27,6 +27,7 @@ fn main() {
         "dump-module-resolve",
         "dump-promise",
         "dump-read-object",
+        "only-fe-tonearest",
     ];
 
     for feature in &features {
@@ -82,6 +83,11 @@ fn main() {
     if env::var("CARGO_FEATURE_EXPORTS").is_ok() {
         patch_files.push("read_module_exports.patch");
         defines.push(("CONFIG_MODULE_EXPORTS".into(), None));
+    }
+
+    if env::var("CARGO_FEATURE_ONLY_FE_TONEAREST").is_ok() {
+        patch_files.push("only_fe_tonearest.patch");
+        defines.push(("ONLY_FE_TONEAREST".into(), None));
     }
 
     for feature in &features {

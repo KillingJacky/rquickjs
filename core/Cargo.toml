@@ -153,6 +153,8 @@ dump-module-resolve = ["rquickjs-sys/dump-module-resolve"]
 dump-promise = ["rquickjs-sys/dump-promise"]
 dump-read-object = ["rquickjs-sys/dump-read-object"]
 
+only-fe-tonearest = ["rquickjs-sys/only-fe-tonearest"]
+
 # Enable compilation tests
 compile-tests = []
 
