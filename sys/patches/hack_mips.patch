@@ -1,7 +1,16 @@
 diff --git a/quickjs.c b/quickjs.c
-index 48aeffc..8266877 100644
+index 48aeffc..f4b53b8 100644
 --- a/quickjs.c
 +++ b/quickjs.c
+@@ -70,7 +70,7 @@
+ /* define to include Atomics.* operations which depend on the OS
+    threads */
+ #if !defined(EMSCRIPTEN)
+-#define CONFIG_ATOMICS
++#define CONFIG_ATOMICS_XXX
+ #endif
+ 
+ #if !defined(EMSCRIPTEN)
 @@ -11353,13 +11353,28 @@ static int js_ecvt(double d, int n_digits, int *decpt, int *sign, char *buf,
          rounding_mode = FE_TONEAREST;
  #ifdef CONFIG_PRINTF_RNDN

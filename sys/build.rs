@@ -86,7 +86,7 @@ fn main() {
     }
 
     if env::var("CARGO_FEATURE_HACK_MIPS").is_ok() {
-        patch_files.push("only_fe_tonearest.patch");
+        patch_files.push("hack_mips.patch");
         defines.push(("ONLY_FE_TONEAREST".into(), None));
         defines.push(("DISABLE_ATOMICS".into(), None));
     }
