@@ -46,4 +46,4 @@ dump-promise = []
 dump-read-object = []
 
 # Fix float rounding for MIPS with only soft floating
-only-fe-tonearest = []
+hack-mips = []

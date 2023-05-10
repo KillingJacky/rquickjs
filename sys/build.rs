@@ -27,7 +27,7 @@ fn main() {
         "dump-module-resolve",
         "dump-promise",
         "dump-read-object",
-        "only-fe-tonearest",
+        "hack-mips",
     ];
 
     for feature in &features {
@@ -85,9 +85,10 @@ fn main() {
         defines.push(("CONFIG_MODULE_EXPORTS".into(), None));
     }
 
-    if env::var("CARGO_FEATURE_ONLY_FE_TONEAREST").is_ok() {
+    if env::var("CARGO_FEATURE_HACK_MIPS").is_ok() {
         patch_files.push("only_fe_tonearest.patch");
         defines.push(("ONLY_FE_TONEAREST".into(), None));
+        defines.push(("DISABLE_ATOMICS".into(), None));
     }
 
     for feature in &features {

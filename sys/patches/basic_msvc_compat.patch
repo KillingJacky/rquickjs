@@ -210,7 +210,7 @@ index 5098719..de6741e 100644
  /* define to include Atomics.* operations which depend on the OS
     threads */
 -#if !defined(EMSCRIPTEN)
-+#if !defined(EMSCRIPTEN) && !defined(_MSC_VER)
++#if !defined(EMSCRIPTEN) && !defined(_MSC_VER) && !defined(DISABLE_ATOMICS)
  #define CONFIG_ATOMICS
  #endif
  
